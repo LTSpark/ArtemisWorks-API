@@ -6,10 +6,6 @@ const CommentarySchema = Schema({
         ref: 'Work',
         required: [true, "WorkId is required"]
     },
-    authorName: {
-        type: String,
-        required: [true, "Name is required"]
-    },
     authorId: {
         type: String,
         required: [true, "Id is required"]

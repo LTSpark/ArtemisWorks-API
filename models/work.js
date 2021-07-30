@@ -1,10 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const WorkSchema = Schema({
-    authorName: {
-        type: String,
-        required: [true, "Name is required"]
-    },
     authorId: {
         type: String,
         required: [true, "Id is required"]

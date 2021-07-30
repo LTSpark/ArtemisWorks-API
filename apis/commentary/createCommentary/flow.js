@@ -7,13 +7,12 @@ const { customResponse, errorResponse } = require('../../../utils/responses');
 
 const createCommentaryFlow = async( req, res ) => {
 
-    const { user_id: authorId, user_name: authorName } = req.user;
+    const { user_id: authorId } = req.user;
     const { workId } = req.query;
     const { commentary } = req.body;
 
     const newCommentary = new Commentary({
         authorId,
-        authorName,
         commentary,
         workId,
         createdAt: Date.now(),
