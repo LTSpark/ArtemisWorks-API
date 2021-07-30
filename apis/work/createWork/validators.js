@@ -8,7 +8,7 @@ const createWorkValidators = [
     authToken,
     fileValidator,
     fileExtensionValidator,
-    body('description').optional().isLength({min: 1, max: 300}).trim(),
+    body('description').optional().isLength({min: 0, max: 300}).trim(),
     fieldValidation
 ];
 
