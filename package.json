@@ -1,0 +1,22 @@
+{
+  "name": "artemis-2-worksapi",
+  "version": "1.0.0",
+  "description": "Works API for Artemis Project ... initial of course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Torres",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cloudinary": "^1.26.2",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.4"
+  }
+}
