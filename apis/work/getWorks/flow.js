@@ -9,7 +9,8 @@ const getWorksFlow = async (req, res) => {
     let query = {}
     
     if (search.charAt(0) === "#"){
-        query = { hashtags: {$in: search} };
+        const regex = new RegExp(search,'i');
+        query = { hashtags: {$in: regex} };
     }
     else {
         if(!ObjectId.isValid(search)){
