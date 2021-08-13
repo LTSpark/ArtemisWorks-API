@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 
-const { getUser } = require('../services/getUser');
 const { customErrorResponse } = require('../utils/responses');
 
 //Auths token and puts user info on req.user
@@ -14,8 +13,9 @@ const authToken = async (req, res, next) => {
 
     try {
         const { sub: userId } = jwt.verify(token, process.env.SECRET_KEY);
-        const user = await getUser(userId, token);
-        req.user = user;
+        req.user = {
+            user_id: userId
+        };
         next();
     } catch (error) {
         console.log(error);
