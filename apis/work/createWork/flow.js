@@ -4,7 +4,7 @@ const { cloudinaryUpload } = require('../../../services/cloudinaryUpload');
 
 const createWorkFlow = async( req, res ) => {
 
-    const { user_id: authorId } = req.user;
+    const { user_id: authorId, user_name: authorName } = req.user;
     const { description } = req.body;
     const file = req.files.file;
 
@@ -13,6 +13,7 @@ const createWorkFlow = async( req, res ) => {
 
     const work = new Work({
         authorId,
+        authorName,
         description,
         hashtags,
         workURL,

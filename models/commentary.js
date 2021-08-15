@@ -10,6 +10,10 @@ const CommentarySchema = Schema({
         type: String,
         required: [true, "Id is required"]
     },
+    authorName: {
+        type: String,
+        required: [true, "Name is required"]
+    },
     commentary: {
         type: String,
         required: [true, "Commentary is required"]

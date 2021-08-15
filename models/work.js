@@ -5,6 +5,10 @@ const WorkSchema = Schema({
         type: String,
         required: [true, "Id is required"]
     },
+    authorName: {
+        type: String,
+        required: [true, "Name is required"]
+    },
     workURL: {
         type: String,
         required: [true, "URL is required"]

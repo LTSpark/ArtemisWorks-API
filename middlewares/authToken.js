@@ -9,13 +9,16 @@ const authToken = async (req, res, next) => {
     if(!authHeader){ return customErrorResponse(res,"User is not logged in",400);}
     if(!authHeader.startsWith("Bearer ",0)){ return customErrorResponse(res,"Bad authorization",400); }
 
-    const token = authHeader.substring(7,authHeader.length);
+    const token = authHeader.substring(7, authHeader.length);
 
     try {
-        const { sub: userId } = jwt.verify(token, process.env.SECRET_KEY);
+        const { sub } = jwt.verify(token, process.env.SECRET_KEY);
+
         req.user = {
-            user_id: userId
+            user_id: sub.user_id,
+            user_name: sub.user_name
         };
+
         next();
     } catch (error) {
         console.log(error);
